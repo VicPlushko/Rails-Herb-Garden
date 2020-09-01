@@ -5,11 +5,14 @@ class UsersController < ApplicationController
     end 
 
     def create
-        binding.pry
+        # binding.pry
         @user = User.create(user_params)
         redirect_to controller: 'users', action: 'new' unless @user.save
         session[:user_id] = @user.id
-        redirect_to controller: 'users', action: 'welcome'
+        redirect_to controller: 'users', action: 'home'
+     end
+
+     def home
      end
 
     private
