@@ -1,0 +1,2 @@
+class RecipeHerb < ApplicationRecord
+end
