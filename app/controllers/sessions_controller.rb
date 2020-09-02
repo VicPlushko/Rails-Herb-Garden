@@ -4,8 +4,9 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = User.find_by(email: params[:email])
-        if @user && @user.authenticate(params[:password])
+        binding.pry
+        @user = User.find_by(email: params[:user][:email])
+        if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
             redirect_to controller: 'users', action: 'home'
         else 
