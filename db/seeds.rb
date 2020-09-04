@@ -7,9 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
 
-file = File.read('app/assets/json/seeds.json')
-herbs = file["seeds"]
-herbs.tap do |herb_hash|
+
+json = JSON.parse(File.read('app/assets/json/seeds.json'))
+herbs = json['seeds']
+herbs.each do |herb_hash|
     Herb.create(
         name: herb_hash["name"],
         latin_name: herb_hash["latin_name"],
