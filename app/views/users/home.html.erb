@@ -1,9 +1,12 @@
 <h1>Welcome to Your Homepage </h1>
 
 <h2>Herbs</h2>
-<br>
-<br>
-<br>
+<ul>
+<% @herbs.each do |herb|%>
+   <li><p><%=  herb.name %></p></li>
+<% end %>
+</ul>
+
 
 
 

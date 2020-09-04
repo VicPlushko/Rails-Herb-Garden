@@ -13,6 +13,7 @@ class UsersController < ApplicationController
      end
 
      def home
+        @herbs = Herb.all
         
      end
 
