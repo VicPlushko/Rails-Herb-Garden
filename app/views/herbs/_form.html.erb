@@ -1,0 +1,36 @@
+<%= form_for @herb do |f| %>
+    <strong><%= f.label :name %></strong><br>
+    <%= f.text_field :name %><br>
+    <br>
+    <strong><%= f.label :latin_name, "Latin Name" %></strong><br>
+    <%= f.text_field :latin_name %><br>
+    <br>
+    <strong><%= f.label :family %></strong><br>
+    <%= f.text_field :family %><br>
+    <br>
+    <strong><%= f.label :medicinal_parts, "Medicinal Parts" %></strong><br>
+    <%= f.text_field :medicinal_parts %><br>
+    <br>
+    <strong><%= f.label :taste %></strong><br>
+    <%= f.text_field :taste %><br>
+    <br>
+    <strong><%= f.label :energetics %></strong><br>
+    <%= f.text_field :energetics %><br>
+    <br>
+    <strong><%= f.label :action %></strong><br>
+    <%= f.text_field :action %><br>
+    <br>
+    <strong><%= f.label :ideal_for, "Ideal For" %></strong><br>
+    <%= f.text_area :ideal_for %><br>
+    <br>
+    <strong><%= f.label :application %></strong><br>
+    <%= f.text_area :application %><br>
+    <br>
+    <strong><%= f.label :dosage %></strong><br>
+    <%= f.text_area :dosage %><br>
+    <br>
+    <strong><%= f.label :considerations %></strong><br>
+    <%= f.text_area :considerations %><br>
+    <br>
+    <%= f.submit "Submit" %>
+<% end %>
