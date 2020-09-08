@@ -13,6 +13,16 @@ class HerbsController < ApplicationController
         @herb = Herb.find_by_id(params[:id])
     end
 
+    def edit
+        @herb = Herb.find_by_id(params[:id])
+    end
+
+    def update
+        @herb = Herb.find_by_id(params[:id])
+        @herb.update(herb_params)
+        redirect_to home_path
+    end
+
     private
 
     def herb_params
