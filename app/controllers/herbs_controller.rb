@@ -23,6 +23,12 @@ class HerbsController < ApplicationController
         redirect_to home_path
     end
 
+    def destroy
+        @herb = Herb.find_by_id(params[:id])
+        @herb.destroy
+        redirect_to home_path
+    end
+
     private
 
     def herb_params

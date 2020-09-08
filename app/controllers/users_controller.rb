@@ -14,8 +14,6 @@ class UsersController < ApplicationController
 
      def home
         @herbs = Herb.all.order('name ASC')
-
-        
      end
 
     private
