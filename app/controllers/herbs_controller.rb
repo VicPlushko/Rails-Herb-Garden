@@ -6,6 +6,7 @@ class HerbsController < ApplicationController
 
     def create
         @herb = Herb.create(herb_params)
+        redirect_to herb_path(@herb)
     end
 
     def show

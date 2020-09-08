@@ -13,7 +13,8 @@ class UsersController < ApplicationController
      end
 
      def home
-        @herbs = Herb.all
+        @herbs = Herb.all.order('name ASC')
+
         
      end
 
