@@ -15,9 +15,9 @@ class RemediesController < ApplicationController
     end
 
     def create
-        user = User.find_by_id(params[:user_id])
-        remedy = user.remedies.create(remedy_params)
-        redirect_to new_user_remedy_path(remedy, user_id)
+        @user = User.find_by_id(params[:user_id])
+        @remedy = @user.remedies.create(remedy_params)
+        redirect_to new_user_remedy_path(@remedy, user_id)
     end
 
     def edit
