@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
-        @remedy = @user.remedies.build
     end 
 
     def create

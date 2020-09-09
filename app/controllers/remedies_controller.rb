@@ -9,17 +9,17 @@ class RemediesController < ApplicationController
     end
 
     def new
-      binding.pry
+      # binding.pry
       @user = User.find_by_id(params[:user_id])
       @remedy = Remedy.new(user_id: params[:user_id])
       4.times {@remedy.remedy_herbs.build}
     end
 
     def create
-      # binding.pry
-        @user = User.find_by_id(params[:user_id])
-        @remedy = Remedy.create(remedy_params)
-        redirect_to new_user_remedy_path(@remedy, user_id)
+      binding.pry
+        user = User.find_by_id(params[:user_id])
+        remedy = Remedy.create(remedy_params)
+        redirect_to user_remedy_path(user)
     end
 
     def edit
