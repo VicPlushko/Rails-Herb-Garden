@@ -6,6 +6,7 @@ class RemediesController < ApplicationController
 
     def show
         @remedy = Remedy.find_by_id(params[:id])
+        @remedy.remedy_herbs.build
     end
 
     def new
