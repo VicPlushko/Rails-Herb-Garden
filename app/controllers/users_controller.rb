@@ -14,11 +14,12 @@ class UsersController < ApplicationController
 
      def home
         @herbs = Herb.all.order('name ASC')
+        @remedies = Remedy.all.order('title ASC')
      end
 
     private
 
     def user_params
-        params.require(:user).permit(:name, :email, :password, :password_confirmation, remedies_attributes: [:title, :directions, :user_id] )
+        params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end

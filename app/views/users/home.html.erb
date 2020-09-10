@@ -13,9 +13,11 @@
 
 
 <h2>Remedies</h2><br>
-<br>
-<br>
-<br>
+<ul>
+<% @remedies.each do |remedy|%>
+   <li><p><%= link_to "#{remedy.title}", user_remedy_path(:user_id, remedy) %></p></li>
+<% end %>
+</ul>
 
 
 

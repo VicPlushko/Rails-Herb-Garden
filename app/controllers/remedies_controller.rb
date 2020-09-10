@@ -10,8 +10,8 @@ class RemediesController < ApplicationController
 
     def new
       # binding.pry
-      @user = User.find_by_id(params[:user_id])
-      @remedy = Remedy.new(user_id: params[:user_id])
+      @user = User.find_by_id(session[:user_id])
+      @remedy = Remedy.new(user_id: session[:user_id])
       4.times {@remedy.remedy_herbs.build}
     end
 
@@ -19,7 +19,7 @@ class RemediesController < ApplicationController
       binding.pry
         user = User.find_by_id(params[:user_id])
         remedy = Remedy.create(remedy_params)
-        redirect_to user_remedy_path(user)
+        redirect_to home_path
     end
 
     def edit
