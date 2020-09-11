@@ -1,50 +1,49 @@
 class RemediesController < ApplicationController
+  def index
+    @remedies = Remedy.all
+  end
 
-    def index
-        @remedies = Remedy.all
-    end
+  def show
+    @remedy = Remedy.find_by_id(params[:id])
+  end
 
-    def show
-        @remedy = Remedy.find_by_id(params[:id])
-        @remedy.remedy_herbs.build
-    end
+  def new
+    @user = User.find_by_id(session[:user_id])
+    @remedy = Remedy.new(user_id: session[:user_id])
+    4.times { @remedy.remedy_herbs.build }
+  end
 
-    def new
-      # binding.pry
-      @user = User.find_by_id(session[:user_id])
-      @remedy = Remedy.new(user_id: session[:user_id])
-      4.times {@remedy.remedy_herbs.build}
-    end
-
-    def create
-      binding.pry
-        user = User.find_by_id(params[:user_id])
-        remedy = Remedy.create(remedy_params)
+  def create
+    user = User.find_by_id(remedy_params[:user_id])
+    remedy = Remedy.create(remedy_params)
+    remedy.user = user
+      if remedy.persisted?
+        remedy_herb = RemedyHerb.create(remedy_id: remedy.id, herb_id: remedy_params[:remedy_herbs_attributes][:herb_id], quantity: remedy_params[:remedy_herbs_attributes][:quantity])
         redirect_to home_path
-    end
+      end
+  end
 
-    def edit
-        @remedy = Remedy.find_by_id[params[:id]]
-    end 
+  def edit
+    @remedy = Remedy.find_by_id[params[:id]]
+  end
 
-    def update
-        
-    end
+  def update
+  end
 
-    def destroy
-      @remedy = Remedy.find_by_id(params[:id])
-      @remedy.destroy
-      flash[:notice] = "Successfully destroyed remedy."
-      redirect_to root_path
-    end
+  def destroy
+    @remedy = Remedy.find_by_id(params[:id])
+    @remedy.destroy
+    flash[:notice] = "Successfully destroyed remedy."
+    redirect_to root_path
+  end
 
   private
 
   def remedy_params
     params.require(:remedy).permit(:title, :directions, :user_id, remedy_herbs_attributes: [
-      :quantity,
-      :herb_id,
-      :remedy_id
-    ])
+                                                                    :quantity,
+                                                                    :herb_id,
+                                                                    :remedy_id,
+                                                                  ])
   end
 end

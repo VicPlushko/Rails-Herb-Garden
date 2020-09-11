@@ -8,6 +8,7 @@
     <h3>Herbs In Remedy</h3>
     <%= f.fields_for :remedy_herbs, @remedy_herb do |rhf| %>
         <div class="quantity_field">
+        <%= rhf.hidden_field :remedy_id, value: remedy.id %>
         <%= rhf.label :quantity %><br>
         <%= rhf.text_field :quantity %>
         </div>
@@ -22,6 +23,7 @@
     <br>
     <%= f.submit "Create Remedy" %>
 <% end %>
+
 
 
     
