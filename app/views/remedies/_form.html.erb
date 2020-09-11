@@ -1,14 +1,13 @@
 <%= form_for [user, remedy] do |f| %>
 
 <div class="field_with_errors">
-    <%= f.hidden_field :user_id   %>
+    <%= f.hidden_field :user_id  %>
     <h4><%= f.label :title, "Remedy Name"%><br></h4>
     <%= f.text_field :title %>
     <br><br>
     <h3>Herbs In Remedy</h3>
     <%= f.fields_for :remedy_herbs, @remedy_herb do |rhf| %>
         <div class="quantity_field">
-        <%= rhf.hidden_field :remedy_id, value: remedy.id %>
         <%= rhf.label :quantity %><br>
         <%= rhf.text_field :quantity %>
         </div>

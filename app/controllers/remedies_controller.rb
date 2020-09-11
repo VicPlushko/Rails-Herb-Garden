@@ -11,6 +11,7 @@ class RemediesController < ApplicationController
     @user = User.find_by_id(session[:user_id])
     @remedy = Remedy.new(user_id: session[:user_id])
     4.times { @remedy.remedy_herbs.build }
+    binding.pry
   end
 
   def create
@@ -24,10 +25,18 @@ class RemediesController < ApplicationController
   end
 
   def edit
-    @remedy = Remedy.find_by_id[params[:id]]
+    @user = User.find_by_id(params[:id])
+    @remedy = Remedy.find_by(user_id: session[:user_id])
+    binding.pry
   end
 
   def update
+    @remedy = Remedy.find_by_id(params[:id])
+    if @remedy.update(remedy_params)
+      redirect to user_remedy_path(@remedy)
+    else
+      render "edit"
+    end 
   end
 
   def destroy

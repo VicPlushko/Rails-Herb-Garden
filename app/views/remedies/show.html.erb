@@ -5,3 +5,6 @@
 <% end %>
 </ul>
 <%= @remedy.directions%>
+
+<%= button_to "Home", home_path, method: "get" %>
+<%= button_to "Edit This Remedy", edit_user_remedy_path(remedy_id), method: "get" %>
