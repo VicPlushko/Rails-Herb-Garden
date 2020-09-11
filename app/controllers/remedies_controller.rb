@@ -33,7 +33,7 @@ class RemediesController < ApplicationController
   def update
     @remedy = Remedy.find_by_id(params[:id])
     if @remedy.update(remedy_params)
-      redirect to user_remedy_path(@remedy)
+      redirect_to user_remedy_path(@remedy)
     else
       render "edit"
     end 
