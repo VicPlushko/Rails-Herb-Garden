@@ -7,4 +7,5 @@
 <%= @remedy.directions%>
 
 <%= button_to "Home", home_path, method: "get" %>
-<%= button_to "Edit This Remedy", edit_user_remedy_path(@remedy.user), method: "get" %>
+<%= button_to "Edit This Remedy", edit_user_remedy_path(@remedy), method: "get" %>
+<%= button_to "Delete This Remedy", user_remedy_path(@remedy), method: "delete" %>
