@@ -4,24 +4,16 @@ class SessionsController < ApplicationController
 
   def create
     # binding.pry
+    # user = User.from_omniauth(env["omniauth.auth"]
+    # session[:user_id] = user.id
+    # redirect_to home_path
     if auth_hash = request.env["omniauth.auth"]
-        fb_email = request.env["omniauth.auth"]["info"]["email"]
-        
-        if user = User.find_by(email: fb_email)
-            session[:user_id] = user.id
-            redirect_to home_path
-            raise "existing user login"
-        else
-            user = User.new(email: fb_email, password: SecureRandom.hex)
-            if user.save
-            session[:user_id] = user.id
-            redirect_to home_path
-            raise "new user login"
-            end
-        end
+        user = User.find_or_create_by_omniauth(auth_hash)
+        session[:user_id] = user.id
+        redirect_to home_path
     else
-      @user = User.find_by(email: params[:user][:email])
-      if @user && @user.authenticate(params[:user][:password])
+      user = User.find_by(email: params[:user][:email])
+      if user && user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
         redirect_to home_path
       else
@@ -32,7 +24,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete(:user_id)
+    session[:user_id] = nil
     redirect_to root_path
   end
 
