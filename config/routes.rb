@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
   get '/home', to: 'users#home'
-  
+
+  get '/auth/facebook/callback', to: 'sessions#create'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'

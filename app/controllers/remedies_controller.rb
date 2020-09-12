@@ -1,4 +1,6 @@
 class RemediesController < ApplicationController
+  before_action :user_logged_in
+
   def index
     @remedies = Remedy.all
   end
@@ -24,6 +26,7 @@ class RemediesController < ApplicationController
   end
 
   def edit
+    user_logged_in
     @user = User.find_by_id(params[:user_id])
     @remedy = Remedy.find_by_id(params[:id])
   end
