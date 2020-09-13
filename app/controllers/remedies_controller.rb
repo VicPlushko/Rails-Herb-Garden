@@ -2,7 +2,7 @@ class RemediesController < ApplicationController
   before_action :user_logged_in
 
   def index
-    @remedies = Remedy.all
+    @remedies = current_user.remedies
   end
 
   def show

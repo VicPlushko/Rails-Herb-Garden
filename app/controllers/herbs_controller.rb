@@ -1,4 +1,8 @@
 class HerbsController < ApplicationController
+
+    def index
+        @herbs = Herb.all
+    end
     
     def new
         @herb = Herb.new
