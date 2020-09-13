@@ -17,16 +17,17 @@ class RemediesController < ApplicationController
 
   def create
     user = User.find_by_id(remedy_params[:user_id])
-    remedy = Remedy.create(remedy_params)
+    remedy = current_user.remedies.create(remedy_params)
     remedy.user = user
       if remedy.persisted?
         remedy_herb = RemedyHerb.create(remedy_id: remedy.id, herb_id: remedy_params[:remedy_herbs_attributes][:herb_id], quantity: remedy_params[:remedy_herbs_attributes][:quantity])
         redirect_to home_path
+      else
+        render 'new'
       end
   end
 
   def edit
-    user_logged_in
     @user = User.find_by_id(params[:user_id])
     @remedy = Remedy.find_by_id(params[:id])
   end

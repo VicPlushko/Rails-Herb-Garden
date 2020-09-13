@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
      def home
         @herbs = Herb.all.order('name ASC')
-        @remedies = Remedy.all.order('title ASC')
+        @remedies = current_user.remedies.order('title ASC')
      end
 
     private
