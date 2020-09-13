@@ -7,7 +7,7 @@ gem 'pry'
 gem 'awesome_print'
 gem 'json'
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-github'
 gem 'dotenv-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

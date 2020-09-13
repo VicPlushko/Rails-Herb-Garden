@@ -5,10 +5,7 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   get '/home', to: 'users#home'
 
-  # get '/auth/facebook/callback', to: 'sessions#create'
-  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-  match 'auth/failure', to: redirect('/'), via: [:get, :post]
-  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+  get 'auth/:provider/callback', to: 'sessions#create'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
