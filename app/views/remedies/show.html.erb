@@ -1,7 +1,7 @@
 <h1><%= @remedy.title %><h1>
 <ul>
 <% @remedy.remedy_herbs.each do |rh| %>
-     <li><%= rh.quantity %> - <%= rh.herb.name %></li>
+     <li><%= rh.quantity %> - <%= rh.herb.name if rh.herb %></li>
 <% end %>
 </ul>
 <%= @remedy.directions%>

@@ -2,9 +2,9 @@
 
 <ul>
 <% @remedies.each do |remedy|%>
-   <li><p><%= link_to "#{remedy.title}", user_remedy_path(:user_id, remedy) %></p></li>
+   <li><p><%= link_to "#{remedy.title}", user_remedy_path(current_user, remedy) %></p></li>
 <% end %>
 </ul>
 
-<%= button_to "Create A New Remedy", new_user_remedy_path(:user_id, :remedy_id), method: "get" %>
+<%= button_to "Create A New Remedy", new_user_remedy_path(current_user), method: "get" %>
 

@@ -2,6 +2,7 @@ class HerbsController < ApplicationController
 
     def index
         @herbs = Herb.all
+        @herbs = Herb.search(params[:search])
     end
     
     def new
@@ -47,7 +48,8 @@ class HerbsController < ApplicationController
             :ideal_for,
             :application,
             :dosage,
-            :considerations
+            :considerations,
+            :search
         )
     end
 end
