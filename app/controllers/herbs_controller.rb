@@ -10,8 +10,13 @@ class HerbsController < ApplicationController
     end
 
     def create
-        @herb = Herb.create(herb_params)
-        redirect_to herb_path(@herb)
+         herb = Herb.create(herb_params)
+         if herb.save
+           redirect_to herb_path(herb)
+        else
+            flash[:herb_not_created] = "Please make sure all fields are filled in"
+            redirect_to new_herb_path
+        end
     end
 
     def show
@@ -24,14 +29,18 @@ class HerbsController < ApplicationController
 
     def update
         @herb = Herb.find_by_id(params[:id])
-        @herb.update(herb_params)
-        redirect_to home_path
+        if @herb.update(herb_params)
+           redirect_to herbs_path
+        else
+            flash[:herb_not_edited] = "please make sure no fields are left blank"
+            render "edit"
+        end
     end
 
     def destroy
         @herb = Herb.find_by_id(params[:id])
         @herb.destroy
-        redirect_to home_path
+        redirect_to herbs_path
     end
 
     private
@@ -48,8 +57,7 @@ class HerbsController < ApplicationController
             :ideal_for,
             :application,
             :dosage,
-            :considerations,
-            :search
+            :considerations
         )
     end
 end

@@ -1,5 +1,5 @@
 class RemediesController < ApplicationController
-  # before_action :user_logged_in
+  before_action :user_logged_in
 
   def index
     @remedies = current_user.remedies
@@ -24,7 +24,8 @@ class RemediesController < ApplicationController
         remedy_herb = RemedyHerb.create(remedy_id: remedy.id, herb_id: remedy_params[:remedy_herbs_attributes][:herb_id], quantity: remedy_params[:remedy_herbs_attributes][:quantity])
         redirect_to user_remedies_path
       else
-        render 'new'
+        flash[:empty_field] = "Remedy name and directions can not be blank"
+        redirect_to new_user_remedy_path(user)
       end
   end
 
@@ -38,6 +39,7 @@ class RemediesController < ApplicationController
     if @remedy.update(remedy_params)
       redirect_to user_remedy_path(@remedy.user)
     else
+      flash[:empty_edit] = "Remedy name and or directions can not be blank"
       render "edit"
     end 
   end

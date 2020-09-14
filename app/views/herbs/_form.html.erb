@@ -1,4 +1,15 @@
-<%= form_for herb do |f| %>
+<%= form_for @herb do |f| %>
+<% if @herb.errors.any?%>
+    <div id="errors_explanation">
+      <h3><%= pluralize(@herb.errors.count, "error") %></h3>
+      <ul>
+      <% @herb.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
     <strong><%= f.label :name %></strong><br>
     <%= f.text_field :name %><br>
     <br>

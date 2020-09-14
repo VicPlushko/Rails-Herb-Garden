@@ -1,4 +1,8 @@
 <h1>Create A New Remedy</h1>
+<div class="alert">
+<%= flash[:empty_field] %>
+</div>
+<br>
 
 <%= render partial: 'form', locals: {user: @user, remedy: @remedy, remedy_herbs: @remedy_herb} %>
 
