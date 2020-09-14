@@ -1,24 +1,3 @@
-# README
+Welcome to Herb Garden. This is an app to help keep track of medicinal herbs (such as Chamomile, Mint and Yarrow). There is already a list of herbs on the app when you get signed up and logged in. Under Remedies you can keep track of your favorite herbal recipes.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To

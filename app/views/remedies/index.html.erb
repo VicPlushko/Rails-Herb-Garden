@@ -11,6 +11,8 @@
    <li><p><%= link_to "#{remedy.title}", user_remedy_path(current_user, remedy) %></p></li>
 <% end %>
 </ul>
+<br>
 
+<%= button_to "Home", home_path, method: "get" %>
 <%= button_to "Create A New Remedy", new_user_remedy_path(current_user), method: "get" %>
 
