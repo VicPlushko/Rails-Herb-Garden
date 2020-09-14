@@ -5,5 +5,9 @@
     <%= f.label :password %>
     <%= f.password_field :password %><br>
     <br>
+    <div class="alert">
+    <%= flash[:alert] %>
+    </div>
+    <br>
     <%= f.submit "Login" %>
 <% end %>

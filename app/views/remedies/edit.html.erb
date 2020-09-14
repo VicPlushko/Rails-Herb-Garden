@@ -1,0 +1,12 @@
+<h1>Edit This Remedy</h1>
+
+<div class="alert">
+<%= flash[:empty_edit] %>
+</div>
+<br>
+
+<%= render partial: 'form', locals: {user: @user, remedy: @remedy, remedy_herbs: @remedy_herb}%>
+<br>
+
+
+<%= button_to "Home", home_path, method: "get" %>

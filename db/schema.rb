@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_180801) do
+ActiveRecord::Schema.define(version: 2020_09_14_050401) do
 
   create_table "herbs", force: :cascade do |t|
     t.string "name"
@@ -24,22 +24,22 @@ ActiveRecord::Schema.define(version: 2020_09_01_180801) do
     t.string "application"
     t.string "dosage"
     t.string "considerations"
-    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "recipe_herbs", force: :cascade do |t|
-    t.string "quantity"
-    t.integer "herb_id"
-    t.integer "recipe_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "recipes", force: :cascade do |t|
+  create_table "remedies", force: :cascade do |t|
     t.string "directions"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
+  end
+
+  create_table "remedy_herbs", force: :cascade do |t|
+    t.string "quantity"
+    t.integer "herb_id"
+    t.integer "remedy_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,0 +1,15 @@
+<h1>Your Herb List</h1>
+<%= form_tag herbs_path, method: "get" do %>
+   <%= label_tag(:search, "You may search by name, taste, energetics, action and what the herb is ideal for") %>
+   <%= text_field_tag :search, params[:search], placeholder: "Search here" %>
+   <%= submit_tag "Search", name: nil%>
+<% end %>
+
+<ul>
+<% @herbs.each do |herb|%>
+   <li><p><%= link_to "#{herb.name}", herb_path(herb) %></p></li>
+<% end %>
+</ul>
+
+<%= button_to "Home", home_path, method: "get" %>
+<%= button_to "Create A New Herb", new_herb_path, method: "get" %>

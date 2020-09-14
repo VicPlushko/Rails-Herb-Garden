@@ -7,9 +7,15 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
+  </head> 
   <body>
+  
     <%= yield %>
+  <div id="user-widget">
+    <% if current_user %>
+      Welcome <strong><%= current_user.name %></strong>!
+      <%= link_to "Sign out", logout_path, id: "log_out" %>
+    <% end %>
+   </div>
   </body>
 </html>

@@ -1,0 +1,11 @@
+<h1><%= @remedy.title %><h1>
+<ul>
+<% @remedy.remedy_herbs.each do |rh| %>
+     <li><%= rh.quantity %> - <%= rh.herb.name if rh.herb %></li>
+<% end %>
+</ul>
+<%= @remedy.directions%>
+
+<%= button_to "Home", home_path, method: "get" %>
+<%= button_to "Edit This Remedy", edit_user_remedy_path(@remedy), method: "get" %>
+<%= button_to "Delete This Remedy", user_remedy_path(@remedy), method: "delete" %>

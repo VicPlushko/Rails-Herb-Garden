@@ -1,0 +1,56 @@
+{
+    "seeds": [
+      {
+        "name": "Yarrow",
+        "latin_name": "Achillea millefolium",
+        "family": "Asteraceae",
+        "medicinal_parts": "Flowers, Leaves",
+        "taste": "Bitter, Aromatic, Pungent",
+        "energetics": "Cooling, Drying",
+        "action": "Bitter tonic, Antiseptic, Antifungal, Astringent, Styptic, Stimulating Diaphoretic, Anti-inflammatory, Anodyne",
+        "ideal_for": "The individual has vertigo when moving slowly and feels as if something is forgotten. The head seems full of blood. Yarrow is specific for the urinary system and exerts a tonic influence on the venous system and mucous membranes. It is best for atonic and relaxed tissues where there is free discharge or massive bleeding of bright red blood, or diarrhea",
+        "application": "A hot infusion of yarrow produces a stimulating diaphoretic effect and a col d infusion produces a diuretic effect or tones gastric organs. Some of the ability to relieve pain may be due to its prostaglandin-inhibiting action. It is used in the initial stages of colds or fevers, bleeding hemorrhoids, excessive menstrual flow with uterine atony or uterine spasms and vaginitis with vaginal atony. It contains achilletin and achilleine (hemostatics), B-iso-thujone, coumarin, chamazulene, apigenin and steroidal B-sitosterol.",
+        "dosage": "Infusion: 1 teaspoon per cup of water; or 1:1 fresh strength liquid extract: 10-30 drops 1-4 times per day",
+        "considerations": "The constituent, B-iso-thujone, can cause vomiting, stomach and intestinal cramps, retention of urine, and in serious cases, renal damage, vertigo, tremors, and convulsions. B-iso-thujone is alcohol soluble, but aqueous extracts contain less of it. Allergic contact dermatitis can occur with external use of yarrow on sensitive individuals. Discontinue if a rash occurs. It is contraindicated in pregnancy due to the emmenagogue and abortifacient effects"
+      },
+      {
+        "name": "Valerian",
+        "latin_name": "Valeriana Officinalis",
+        "family": "Valerianaceae",
+        "medicinal_parts": "Root",
+        "taste": "Aromatic, Sweet, Spicy",
+        "energetics": "Slightly Warming",
+        "action": "Sedative, Relaxing nervine, Antispasmodic, Anticonvulsant, Hypotensive",
+        "ideal_for": "Valerian is specific for support of atonic and functional nervous disorders and situations arising from cerebral vascular insufficiency. The individual may have a tendency to personality changes, feel light, as if floating in air, oversensitive, and experience hallucinations at night. There may be symptoms of itching and muscle spasms at night and rheumatic pains in limbs with sciatica and jerking",
+        "application": "Valerian is used for restlessness, hysteria, emotional stress, pain, insomnia, anxiety, nervous palpitations, nervous irritation, cardiovascular arrhythmias, attention deficit and hyperactivity syndromes, gastrointestinal cramping, menstrual cramps, shingles and backaches. It has shown antispasmodic activity in vitro on animal uteri. Valerian contains many constituents with pharmacological activity. They include the essential oil, sesquiterpenoids (valerianic acid) and epoxy iridoid esters (valepotriates) and their decomposition products. Additionally Valerian contains the amino acids (arginine,GABA, glutamine, tyrosine) and alkaloids",
+        "dosage": "Infusion: 1-2 teaspoons per cup of water; or 1:1 fresh + dry strength liquid extract: 10-60 drops 1-4 times per day",
+        "considerations": "Infusion: 1-2 teaspoons per cup of water; or 1:1 fresh + dry strength liquid extract: 10-60 drops 1-4 times per day"
+      },
+      {
+        "name": "Bayberry",
+        "latin_name": "Myrica cerifera",
+        "family": "Myricaceae",
+        "medicinal_parts": "Bark",
+        "taste": "Astringent",
+        "energetics": "Cooling, Drying",
+        "action": "Astringent, Styptic, Tonifier.",
+        "ideal_for": "The mental picture of this herb is one of suffering from sleeplessness, despondency, irritability, or indifference.",
+        "application": "Bayberry's tonifying effect is for atonic tissues with discharges due to over-relaxation. It is used for ulceration of the mucous membranes and digestive tract, passive hemorrhages and venous atony and congestion. The astringent aspect of bayberry makes it beneficial in mouth rinses.",
+        "dosage": "Decoction: 1 teaspoon per cup of water; or 1:5 dry plant liquid extract:1-30 drops 1-3 times per day in a little water.",
+        "considerations": "The irritating wax of the young branches contains constituents that are reportedly carcinogenic. It is contraindicated in pregnancy unless used under the guidance of a trained professional."
+      },
+      {
+        "name": "Cactus",
+        "latin_name": "Selenicereus grandiflorus",
+        "family": "Cactaceae",
+        "medicinal_parts": "Succulent stem",
+        "taste": "Sweet, tart",
+        "energetics": "Cooling, Drying",
+        "action": "Diuretic, Stimulating cardiac tonic, Cardiac trophorestorative, Stimulating to the spinal and motor nerves.",
+        "ideal_for": "Indicated for conditions of dilation and atony from muscular laxity and has a special affinity for the heart.",
+        "application": "The principal action of cactus is upon the circular muscle fibers of the heart and arterioles and is used in cardiac incompetence, CHF, cardiac weakness, mitral insufficiency and angina.",
+        "dosage": "1:1 fresh liquid extract: 1-15 drops 1-3 times per day in a little water.",
+        "considerations": "An overdose may cause rapid and erratic heart beat, cardiospasm or a feeling of constriction in the chest, carditis, pericarditis, mental confusion, headaches, vertigo, amblyopia, gastrointestinal upset and noise sensitivity. This herb should only be used under the guidance of trained health care practitioners. Cactus can potentiate cardiac drugs like Digitoxin, Digoxin and other plants containing cardiac glycosides. Physicians should closely monitor individuals who consume formulas with cactus while taking cardiac glycosides or drugs. Cactus is contraindicated in pregnancy."
+      }
+    ]
+  }

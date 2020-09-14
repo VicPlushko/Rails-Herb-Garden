@@ -1,0 +1,28 @@
+<%= form_for [user, remedy] do |f| %>
+
+    <%= f.hidden_field :user_id  %>
+    <h4><%= f.label :title, "Remedy Name"%><br></h4>
+    <%= f.text_field :title %>
+    <br><br>
+    <h3>Herbs In Remedy</h3>
+    <%= f.fields_for :remedy_herbs, @remedy_herb do |rhf| %>
+        <div class="quantity_field">
+        <%= rhf.label :quantity %><br>
+        <%= rhf.text_field :quantity %>
+        </div>
+        <div class="herb_field">
+        <%= rhf.label :name, "Herb" %><br>
+        <%= rhf.collection_select :herb_id, Herb.all, :id, :name%>
+        </div>
+        <br>
+    <% end %>
+    <%= f.label :directions %><br>
+    <%= f.text_area :directions %><br>
+    <br>
+    <%= f.submit %>
+</div>
+<% end %>
+
+
+
+    
