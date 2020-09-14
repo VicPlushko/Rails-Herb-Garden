@@ -1,5 +1,11 @@
 <h1>Your Remedies</h1>
 
+<%= form_tag user_remedies_path(current_user), method: "get" do %>
+   <%= label_tag(:search, "Search for a Remedy by it's title or by what herbs are in it") %>
+   <%= text_field_tag :search, params[:search], placeholder: "Search here" %>
+   <%= submit_tag "Search", name: nil%>
+<% end %>
+
 <ul>
 <% @remedies.each do |remedy|%>
    <li><p><%= link_to "#{remedy.title}", user_remedy_path(current_user, remedy) %></p></li>

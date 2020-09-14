@@ -1,8 +1,9 @@
 class RemediesController < ApplicationController
-  before_action :user_logged_in
+  # before_action :user_logged_in
 
   def index
     @remedies = current_user.remedies
+    @remedies = current_user.remedies.search(params[:search])
   end
 
   def show
@@ -21,7 +22,7 @@ class RemediesController < ApplicationController
     remedy.user = user
       if remedy.persisted?
         remedy_herb = RemedyHerb.create(remedy_id: remedy.id, herb_id: remedy_params[:remedy_herbs_attributes][:herb_id], quantity: remedy_params[:remedy_herbs_attributes][:quantity])
-        redirect_to home_path
+        redirect_to user_remedies_path
       else
         render 'new'
       end
@@ -51,11 +52,11 @@ class RemediesController < ApplicationController
   private
 
   def remedy_params
-    params.require(:remedy).permit(:title, :directions, :user_id, remedy_herbs_attributes: [
-                                                                    :id,
-                                                                    :quantity,
-                                                                    :herb_id,
-                                                                    :remedy_id,
-                                                                  ])
+    params.require(:remedy).permit(:title, :directions, :search, :user_id, remedy_herbs_attributes: [
+      :id,
+      :quantity,
+      :herb_id,
+      :remedy_id,
+    ])
   end
 end

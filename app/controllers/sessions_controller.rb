@@ -8,12 +8,12 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
         redirect_to controller: "users", action: "home"
     else
-      user = User.find_by(email: params[:user][:email])
+      @user = User.find_by(email: params[:user][:email])
       if user && user.authenticate(params[:user][:password])
         session[:user_id] = user.id
         redirect_to home_path
       else
-        flash[:alert] = "The email or password provided is incorrect"
+        flash[:alert] = "Email or Password did not match"
         redirect_to login_path
       end
     end
