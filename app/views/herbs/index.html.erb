@@ -4,6 +4,9 @@
    <%= text_field_tag :search, params[:search], placeholder: "Search here" %>
    <%= submit_tag "Search", name: nil%>
 <% end %>
+<%= flash[:search_error]%>
+<%= flash[:empty_results] %>
+
 
 <ul>
 <% @herbs.each do |herb|%>

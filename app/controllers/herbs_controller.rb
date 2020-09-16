@@ -1,8 +1,16 @@
 class HerbsController < ApplicationController
 
     def index
-        @herbs = Herb.all
-        @herbs = Herb.search(params[:search])
+        @herbs = Herb.all.order('name ASC')
+        if params[:search] && params[:search].length >= 3
+            @herbs = Herb.search(params[:search]).order('name ASC')
+        elsif params[:search] && params[:search].length < 3
+            flash.now[:search_error] = "Search must be more than 3 characters"
+            @herbs = Herb.all.order('name ASC')
+        else
+        @herbs = Herb.all.order('name ASC')
+        end  
+        render 'index'
     end
     
     def new

@@ -4,6 +4,7 @@ class RemediesController < ApplicationController
   def index
     @remedies = current_user.remedies
     @remedies = current_user.remedies.search(params[:search])
+    
   end
 
   def show
