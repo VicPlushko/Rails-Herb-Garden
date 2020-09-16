@@ -18,12 +18,12 @@ class HerbsController < ApplicationController
     end
 
     def create
-         herb = Herb.create(herb_params)
-         if herb.save
-           redirect_to herb_path(herb)
+         @herb = Herb.new(herb_params)
+         if @herb.save
+           redirect_to herb_path(@herb)
         else
             flash[:herb_not_created] = "Please make sure all fields are filled in"
-            redirect_to new_herb_path
+            render :new
         end
     end
 

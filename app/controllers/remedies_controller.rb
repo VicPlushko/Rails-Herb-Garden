@@ -4,6 +4,7 @@ class RemediesController < ApplicationController
   def index
     @remedies = current_user.remedies
     @remedies = current_user.remedies.search(params[:search])
+    binding.pry
     
   end
 
@@ -18,15 +19,15 @@ class RemediesController < ApplicationController
   end
 
   def create
-    user = User.find_by_id(remedy_params[:user_id])
-    remedy = current_user.remedies.create(remedy_params)
-    remedy.user = user
-      if remedy.persisted?
-        remedy_herb = RemedyHerb.create(remedy_id: remedy.id, herb_id: remedy_params[:remedy_herbs_attributes][:herb_id], quantity: remedy_params[:remedy_herbs_attributes][:quantity])
+    @user = User.find_by_id(remedy_params[:user_id])
+    @remedy = current_user.remedies.create(remedy_params)
+    @remedy.user = @user
+      if @remedy.persisted?
+        @remedy_herb = RemedyHerb.create(remedy_id: remedy.id, herb_id: remedy_params[:remedy_herbs_attributes][:herb_id], quantity: remedy_params[:remedy_herbs_attributes][:quantity])
         redirect_to user_remedies_path
       else
         flash[:empty_field] = "Remedy name and directions can not be blank"
-        redirect_to new_user_remedy_path(user)
+        render :new
       end
   end
 

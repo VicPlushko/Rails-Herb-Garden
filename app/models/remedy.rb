@@ -17,5 +17,10 @@ class Remedy < ApplicationRecord
 
     def self.search(search)
         where("title LIKE ?", "%#{search}%")
+
       end
 end
+
+# e.g. "mint"
+# find all of the remedies that have mint in their remedy herbs array
+# finding the herb in the herb class, taking its id and matching to the id in the array of remedy herbs of whatever remedy it exists in
